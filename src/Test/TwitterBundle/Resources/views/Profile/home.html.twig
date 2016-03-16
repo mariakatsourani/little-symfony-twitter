@@ -1,0 +1,33 @@
+{% extends "::base.html.twig" %}
+
+{% block title %}Home{% endblock %}
+
+{% block body %}
+    {% embed "TestTwitterBundle::nav.html.twig" %}
+    {% endembed %}
+    <div>
+        <i>Your followers:</i>
+            {% for follower in followers %}
+                <a href={{ "show/#{follower.username|e}" }}> {{ follower.username|e }}</a>
+            {% endfor %}
+    </div>
+
+    <div>
+        <i>You are following:</i>
+        {% for user in following %}
+            <a href={{ "show/#{user.username|e}" }}> {{ user.username|e }}</a>
+        {% endfor %}
+    </div>
+
+    <h3>See all the updates from people you follow!</h3>
+
+        {% for status in statuses %}
+            <p>
+                <b><a href={{ "show/#{status.username|e}" }}> {{ status.username|e }}</a></b>
+                said at {{ status.date|date("m/d/Y") }} <br>
+                {{ status.content|e }}
+            </p>
+        {% endfor %}
+
+
+{% endblock %}

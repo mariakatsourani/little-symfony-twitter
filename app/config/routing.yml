@@ -1,0 +1,8 @@
+test_twitter:
+    resource: "@TestTwitterBundle/Resources/config/routing.yml"
+    prefix:   /
+
+app:
+    resource: @AppBundle/Controller/
+    type:     annotation
+

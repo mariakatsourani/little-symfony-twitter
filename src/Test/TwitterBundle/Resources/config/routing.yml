@@ -1,0 +1,46 @@
+index:
+     path:     /
+     defaults: { _controller: TestTwitterBundle:Security:login }
+
+allUsers:
+    path:     /allUsers
+    defaults: { _controller: TestTwitterBundle:User:allUsers }
+
+follow:
+    path:     /follow/{username}
+    defaults: { _controller: TestTwitterBundle:Relationship:follow }
+
+unfollow:
+    path:     /unfollow/{username}
+    defaults: { _controller: TestTwitterBundle:Relationship:unfollow }
+
+show:
+    path:     /show/{username}
+    defaults: { _controller: TestTwitterBundle:Profile:show }
+
+edit:
+    path:     /edit
+    defaults: { _controller: TestTwitterBundle:Profile:edit }
+
+home:
+    path:     /home
+    defaults: { _controller: TestTwitterBundle:Profile:home }
+
+register:
+    path:     /register
+    defaults: { _controller: TestTwitterBundle:User:register }
+
+login:
+    path:     /login
+    defaults: { _controller: TestTwitterBundle:Security:login }
+
+login_check:
+    path: /login_check
+
+logout:
+    path:   /logout
+
+# no controller is bound to this route
+# as it's handled by the Security system
+
+

@@ -1,0 +1,24 @@
+<?php
+namespace Test\TwitterBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * @ORM\Entity
+ * @ORM\Table(name="relationship")
+ */
+class Relationship{
+
+    /**
+     * @ORM\Column(type="integer")
+     * @ORM\Id
+     */
+    protected $follower;
+
+    /**
+     * @ORM\Column(type="integer")
+     * @ORM\Id
+     */
+    protected $following;
+
+}

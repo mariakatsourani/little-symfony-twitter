@@ -1,0 +1,16 @@
+{% extends "::base.html.twig" %}
+
+{% block title %}TestTwitterBundle:User:register{% endblock %}
+
+{% block body %}
+    {% embed "TestTwitterBundle::base.html.twig" %}
+    {% endembed %}
+<h3>Hi! Register below or <a href="{{ path('login') }}">log in</a>.</h3>
+
+    {{ form_start(form, {attr: {novalidate: 'novalidate'}}) }}
+        {{ form_row(form.username) }}
+        {{ form_row(form.password) }}
+        {{ form_row(form.email) }}
+    {{ form_end(form) }}
+
+{% endblock %}

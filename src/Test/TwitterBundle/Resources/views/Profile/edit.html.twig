@@ -1,0 +1,22 @@
+{% extends "::base.html.twig" %}
+
+{% block title %}Your profile{% endblock %}
+
+{% block body %}
+    {% embed "TestTwitterBundle::nav.html.twig" %}
+    {% endembed %}
+<h3>Welcome to your profile {{ user.username }}!</h3>
+
+    Post a new status:
+    {{ form_start(form, {attr: {novalidate: 'novalidate'}}) }}
+    {{ form_widget(form) }}
+    {{ form_end(form) }}
+
+    <ul>
+        <h4>Your status updates:</h4>
+        {% for status in statuses %}
+            <li>{{ status.content|e }}</li>
+        {% endfor %}
+    </ul>
+
+{% endblock %}

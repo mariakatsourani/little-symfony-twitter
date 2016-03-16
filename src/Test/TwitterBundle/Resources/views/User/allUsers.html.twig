@@ -1,0 +1,16 @@
+{% extends "::base.html.twig" %}
+
+{% block title %}TestTwitterBundle:User:allUsers{% endblock %}
+
+{% block body %}
+    {% embed "TestTwitterBundle::nav.html.twig" %}
+    {% endembed %}
+    <h3>List of all registered users</h3>
+
+    <ul>
+        {% for user in users %}
+            <li><a href={{ "show/#{user.username}" }}> {{ user.username|e }} </a></li>
+        {% endfor %}
+    </ul>
+
+{% endblock %}

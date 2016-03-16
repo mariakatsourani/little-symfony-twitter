@@ -1,0 +1,14 @@
+
+{% block body %}
+    {% embed "TestTwitterBundle::base.html.twig" %}
+    {% endembed %}
+    <div >
+        <ul id="nav">
+            <li><a href="{{ path('home') }}">Home</a></li>
+            <li><a href="{{ path('allUsers') }}">Users</a></li>
+            <li><a href="{{ path('edit') }}">My Profile</a></li>
+            <li><a href="{{ path('logout') }}">Logout</a></li>
+        </ul>
+    </div>
+
+{% endblock %}

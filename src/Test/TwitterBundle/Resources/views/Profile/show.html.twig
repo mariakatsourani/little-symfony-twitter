@@ -1,0 +1,23 @@
+{% extends "::base.html.twig" %}
+
+{% block title %}Show profile{% endblock %}
+
+{% block body %}
+    {% embed "TestTwitterBundle::nav.html.twig" %}
+    {% endembed %}
+<h3>This is {{ profile.username }} s' profile</h3>
+    <p>Email: {{ profile.email }}</p><br>
+
+    {% if relationship.followed_by is defined %}
+    <p>{{ profile.username }} is following you </p>
+    {% endif %}
+
+    {% if relationship.following is defined %}
+        <p>You are following {{ profile.username }}
+            <a href="{{ path('unfollow', {'username': profile.username}) }}">
+            Unfollow {{ profile.username }}</a></p>
+    {% else %}
+            <p><a href="{{ path('follow', {'username': profile.username}) }}"> Follow {{ profile.username }}</a></p>
+    {% endif %}
+
+{% endblock %}

@@ -1,0 +1,9 @@
+{% extends "::base.html.twig" %}
+
+{% block title %}Follow{% endblock %}
+
+{% block body %}
+    {% embed "TestTwitterBundle::nav.html.twig" %}
+    {% endembed %}
+<h3>You are now following {{ username }}</h3>
+{% endblock %}
